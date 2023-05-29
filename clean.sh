@@ -8,7 +8,7 @@
 # adicionando uma extensão a lista, o arquivo será removido automaticamente após a execução do latex
 
 
-DROP="aux lof log lot fls out toc fmt fot cb cb2 lb nav fdb vrb synctex snm"
+DROP="aux lof log lot fls out toc fmt fot cb cb2 lb nav fdb vrb synctex.gz snm pdf fdb_latexmk"
 for ITEM in $DROP
     do 
         rm -rf *.$ITEM
