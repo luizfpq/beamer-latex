@@ -12,7 +12,7 @@
 
 \newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
 
-\title{Aula 00}
+\title{Aula 05 - Processos, chamadas de sistema e interrupções}
 \subtitle{2023.1 - SOPA2 - Sistemas Operacionais}
 \course{Tecnologia em Análise e Desenvolvimento de Sistemas}
 \author{\href{mailto:luiz.quirino@ifsp.edu.br}{Luiz \textbf{Quirino}}}
@@ -35,40 +35,35 @@
 
 %\end{frame}
 
-\section{Apresentação}
+\section{Revisão: Chamada de Sistema e Interrupção}
 
-\begin{frame}{Quem sou eu na fila do pão?}
-Formação:
+\begin{frame}{O que são chamadas de sistema?}
+Exemplos:
 \begin{itemize}
-\item Pos-graduação em Gestão de Riscos e CiberSegurança - Focus
-\item Sistemas de Informação - UFMS
-\item Gestão de Tecnologia da Informação - Unicesumar
-\item Técnico em Informática - Centro Paula Souza
+\item Ler um arquivo
+\item Escrever em um arquivo
+\item Imprimir um arquivo
 \end{itemize}
-Atuação:
+Descritivo:
 \begin{itemize}
-\item Técnico em Tecnologia da Informação - IFSP
-\item Contribuidor OpenSource
-\item Desenvolvedor Freelancer
+\item As chamadas de sistemas são funções usadas pelas aplicações para solicitar a execução de algum serviço ao kernel do sistema operacional.
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Ementa}\justifying
-      A disciplina aborda o conjunto de programas usados para gerenciar recursos de
-computadores, fornecendo uma interface com o usuário. São trabalhos os fundamentos,
-instalação e configuração de sistemas operacionais e aplicativos modernos, gestão de
-armazenamento, usuários e processos de software, proporcionando ao estudante habilidade
-para selecionar e instalar sistemas operacionais e programas de computador adequados às
-necessidades de usuários e empresas, e instalar seu próprio computador de
-desenvolvimento.
+\begin{frame}{Como funciona?}\justifying
+      Com as chamadas de sistemas é possível, por exemplo, definir acesso a recursos de baixo nível como alocação de memória, periféricos e arquivos. Além disso, são as chamadas de sistemas que permitem a criação e a finalização de processos.
+
+Ao ser exacutada uma chamada de sistema, o sistema operacional salva todo o contexto do processo (para continuar mais tarde de onde parou), verifica as permissões envolvidas no pedido e autoriza (se for o caso) o processador a executar o serviço solicitado.
+
+Quando o processador termina a execução da chamada de sistema, o sistema operacional retorna o controle para o processo, colocando-o novamente na fila de processos prontos para a execução.
 \end{frame}
 
-\begin{frame}{Objetivo da disciplina}\justifying
-      Identificar os fundamentos de sistemas operacionais modernos e a sua importância para
-sistemas de informação. Conhecer os mecanismos internos a um sistema operacional.
-Selecionar, instalar e configurar sistemas operacionais. Comparar e aplicar diferentes
-soluções de sistemas operacionais.
+\begin{frame}{Exemplo}\justifying
+      \begin{figure}[H]
+            \centerline{\includegraphics[width=0.6\textwidth]{assets/aula-tads-sopa2-2023-06-05/chamadas.png}}
+            \caption{https://guialinux.uniriotec.br/chamadas-de-sistema/}
+        \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Conteúdo Programático}
