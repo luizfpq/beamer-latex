@@ -1,6 +1,12 @@
 \documentclass{beamer}
 \usepackage{amsfonts,amsmath,oldgerm}
 \usepackage{ragged2e}
+\usepackage{supertabular}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+\usepackage{xkeyval}
 
 \usetheme{sintef}
 
@@ -35,37 +41,60 @@
 
 %\end{frame}
 
-\section{Revisão: Chamada de Sistema e Interrupção}
 
-\begin{frame}{O que são chamadas de sistema?}
-Exemplos:
+\section{Por que precisamos de um sistema operacional?}
+\begin{frame}
+      
+
 \begin{itemize}
-\item Ler um arquivo
-\item Escrever em um arquivo
-\item Imprimir um arquivo
-\end{itemize}
-Descritivo:
-\begin{itemize}
-\item As chamadas de sistemas são funções usadas pelas aplicações para solicitar a execução de algum serviço ao kernel do sistema operacional.
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Como funciona?}\justifying
-      Com as chamadas de sistemas é possível, por exemplo, definir acesso a recursos de baixo nível como alocação de memória, periféricos e arquivos. Além disso, são as chamadas de sistemas que permitem a criação e a finalização de processos.
-
-Ao ser exacutada uma chamada de sistema, o sistema operacional salva todo o contexto do processo (para continuar mais tarde de onde parou), verifica as permissões envolvidas no pedido e autoriza (se for o caso) o processador a executar o serviço solicitado.
-
-Quando o processador termina a execução da chamada de sistema, o sistema operacional retorna o controle para o processo, colocando-o novamente na fila de processos prontos para a execução.
-\end{frame}
-
-\begin{frame}{Exemplo}\justifying
-      \begin{figure}[H]
-            \centerline{\includegraphics[width=0.6\textwidth]{assets/aula-tads-sopa2-2023-06-05/chamadas.png}}
-            \caption{https://guialinux.uniriotec.br/chamadas-de-sistema/}
-        \end{figure}
-\end{frame}
-
+  \item Sistemas de computadores modernos são compostos por diversos dispositivos:
+  \item Processadores;
+  \item Memória;
+  \item Controladoras;
+  \item Monitor;
+  \item Teclado;
+  \item Mouse;
+               
+                 \item Impressoras;
+               
+                 \item Etc...
+               
+               \end{itemize}
+                     
+     \end{frame}
+     
+     \begin{frame}
+           
+     \begin{itemize}
+           \item Com tantos dispositivos, surge a necessidade de gerenciamento e manipulação desses diversos dispositivos
+         
+           \item Tarefa difícil
+         
+        
+     
+     
+     
+     \begin{frame}
+           
+     \begin{itemize}
+           \item Software responsável por gerenciar dispositivos que compõem um sistema computacional e realizar a interação entre o usuário e esses dispositivos;
+         
+           \item Hardware
+         
+           \item Processador;
+         
+           \item Memória Principal;
+         
+           \item Dispositivos de Entrada/Saída;
+         
+           \item Software
+         
+           \item Programas de Aplicação;
+         
+           \item Programas do Sistema;
+         
+         \end{itemize}
+     \end{frame}
 
 
 \footlinecolor{}
