@@ -1,0 +1,362 @@
+\documentclass{beamer}
+\usepackage{amsfonts,amsmath,oldgerm}
+\usepackage{ragged2e}
+
+\usetheme{sintef}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+
+\usefonttheme[onlymath]{serif}
+
+\titlebackground*{assets/background}
+
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+
+\title{Aula 01 - História dos sistemas operacionais}
+\subtitle{2023.1 - SPOSOPE - Sistemas Operacionais}
+\course{Tecnologia em Análise e Desenvolvimento de Sistemas}
+\author{\href{mailto:luizfpq@gmail.com}{Luiz \textbf{Quirino}}}
+\IDnumber{luizfpq@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{frame}
+%
+%      Este material é produzido utilizando \LaTeX\, baseado na SINTEF Presentation, disponibilizado sob licenciamento \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0}
+%
+%\vspace{\baselineskip}
+
+%In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation}
+
+% This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
+
+%\end{frame}
+
+\section{História dos Sistemas Operacionais}
+
+\begin{frame}{Introdução}
+      \begin{itemize}
+            \item Os sistemas operacionais são fundamentais para o funcionamento dos computadores modernos.
+            \item Eles evoluíram ao longo do tempo para fornecer recursos avançados e eficientes.
+            \item Nesta aula, exploraremos brevemente a história dos sistemas operacionais.
+          \end{itemize}
+
+\end{frame}
+
+
+\section{Primeira geração}
+\begin{frame}{Primeira geração: 1945 a 1955}
+      \begin{itemize}
+          \item Computadores: em meados da década de 40
+          \item Máquinas de Calcular
+          \item Relés mecânicos
+          \item Ciclos medidos em segundos (!)
+          \item Posteriormente os relés foram substituídos por válvulas a vácuo
+          \item Máquinas enormes que ocupavam uma sala inteira
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Primeira Geração - 1945 a 1955}
+      \begin{itemize}
+          \item Um único grupo de pessoas projetava, construía, programava, operava e mantinha cada máquina
+          \item Toda a programação feita em linguagem de máquina pura (!)
+          \item Não existia nenhuma linguagem de programação, nem mesmo Assembly!
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Primeira Geração - 1945 a 1955}
+      \begin{itemize}
+          \item Não existia o termo sistemas operacional
+          \item O programador reservava um período de tempo
+          \item Inseria seu painel de conectores no computador
+          \item Cálculos numéricos simples, como geração de tabelas de senos, co-senos e logaritmos
+          \item No início dos anos 50 as coisas “melhoraram” com os cartões perfurados
+      \end{itemize}
+  \end{frame}
+  
+            
+  \section{Segunda geração}
+  \begin{frame}{Segunda Geração - 1955 a 1965}
+      \begin{itemize}
+          \item A introdução do transistor ocorreu em meados da década de 50
+          \item Os computadores se tornaram confiáveis para serem vendidos para clientes
+          \item Houve uma separação clara entre projetistas, construtores, operadores, programadores e pessoal de manutenção
+          \item Chamados de Grande Porte ou Mainframes
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Segunda Geração - 1955 a 1965}
+      \begin{itemize}
+          \item Eram postas em salas especiais com ar-condicionado e operadores profissionais
+          \item Nas mãos de grandes empresas, órgãos do governo, universidades
+          \item Processo de execução de um job (tarefa):
+                programava em Fortran/Assembly no papel,
+                convertia para cartão perfurado, entregava para um operador, resultado na sala de saída
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Segunda Geração - 1955 a 1965}
+      \begin{itemize}
+          \item Se o compilador Fortran fosse necessário, o seu código (cartões) precisavam ser inseridos
+          \item Existia o tempo ocioso (sala de máquina, submissão e saída)
+          \item Solução: sistema de processamento em lotes (batch) usando um computador bom para isso (ex: IBM 1401) e a fita iria para o computador de cálculos (IBM 7094)
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Segunda Geração - 1955 a 1965 (Fluxo do Processamento em Batch)}
+      \begin{itemize}
+          \item Após a geração da fita de jobs pelo computador mais simples...
+          \item ...o operador carregava um programa especial, que lia o primeiro programa na fila e o executava, gravando a saída em outra fita
+          \item Isso era feito até acabarem os jobs
+          \item Esse programa especial é o ancestral dos sistemas operacionais
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Segunda Geração - 1955 a 1965 (Fluxo do Processamento em Batch)}
+      \begin{itemize}
+          \item Eram usados principalmente para cálculos de engenharia e científicos
+          \item Eram escritos em Fortran e Assembly
+          \item Sistemas Operacionais:
+                \begin{itemize}
+                    \item FMS = Fortran Monitor System
+                    \item IBSYS = Sistema Operacional do IBM 7094
+                \end{itemize}
+      \end{itemize}
+  \end{frame}
+  
+  \section{Terceira geração}
+  \begin{frame}{Terceira Geração - 1965 a 1980}
+      \begin{itemize}
+          \item No início da década de 60, os fabricantes tinham duas linhas de produtos incompatíveis:
+                \begin{itemize}
+                    \item Mainframes (7094): engenharia/ciência
+                    \item Comerciais (1401): bancos/seguradoras
+                \end{itemize}
+          \item Manter as duas linhas era muito caro
+          \item Além disso, alguns clientes começavam com máquinas pequenas e migravam para maiores
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - 1965 a 1980}
+      \begin{itemize}
+          \item IBM tentou resolver isso criando System/360
+          \item Era uma série de máquinas de software compatível com o 1401 e o 7094
+          \item A diferença das máquinas de 360 era no preço e no desempenho, pois variavam o hardware:
+                \begin{itemize}
+                    \item Capacidade máxima de memória, velocidade do processador, número de dispositivos de E/S
+                \end{itemize}
+          \item Mas as máquinas tinham a mesma arquitetura!
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - 1965 a 1980}
+      \begin{itemize}
+          \item Mesma arquitetura = Mesmo ISA! (Instruction Set Architecture)
+          \item O 360 foi projetado para computação científica (numérica) e comercial
+          \item Primeira geração importante a utilizar CIs (Circuitos Integrados)
+          \item Assim, uma única família de máquinas poderia satisfazer as necessidades de todos os clientes
+          \item Nos anos seguintes, a IBM lançou computadores sucessores: 370, 4300, 3080, 3090 e Z
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - 1965 a 1980}
+      \begin{itemize}
+          \item A intenção era que todo software (incluindo o SO OS/360) funcionasse em todos os modelos
+          \item Para uso científico e comercial
+          \item Ser eficiente em ambientes muito distintos
+          \item Não deu certo...
+          \item O resultado foi um SO enorme e complexo
+          \item Milhões de linhas em Assembly, milhares de programadores e milhares de erros
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - Multiprogramação}
+      \begin{itemize}
+          \item Apesar do tamanho enorme e de seus erros, os SOs de 3ª geração atendiam aos clientes
+          \item Popularizaram técnicas importantes, como o conceito de multiprogramação
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - Spooling}
+      \begin{itemize}
+          \item Vários jobs simultâneos precisam de ajuda do hardware (segurança, memória, etc)
+          \item O 360 e outros hardwares de 3ª geração estavam preparados para isso
+          \item Outro conceito importante é o Spooling (Operação Periférica Simultânea On-line)
+          \item Efetuava a leitura de jobs de cartões para o disco – eliminava a função dos IBM 1401 (ler os cartões separadamente)
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - Time Sharing}
+      \begin{itemize}
+          \item Ainda eram sistemas em lote, pois os jobs continuavam executando em sequência
+          \item Abriu espaço para o compartilhamento de tempo (time sharing)
+          \item Na verdade, esse conceito é uma variante de multiprogramação
+          \item Gerenciar o tempo ocioso entre as aplicações
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - Time Sharing e CTSS}
+      \begin{itemize}
+          \item CTSS: Primeiro SO sério com time sharing
+          \item CTSS = Compatible Time Sharing System
+          \item Desenvolvido pelo MIT em um IBM 7094 por volta de 1962
+          \item O conceito de time sharing somente tornou-se popular quando o hardware passou a dar suporte a ele
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - MULTICS}
+      \begin{itemize}
+          \item CTSS, Bell Labs e G.E. (General Electric)
+          \item Decidiram dar o início a um computer utility
+          \item Máquina que comportaria centenas de usuários de tempo compartilhado
+          \item A mesma lógica da rede elétrica (você pluga na tomada e utiliza)
+          \item MULTICS = Serviço de Computação e Informação Multiplexado
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - MULTICS}
+      \begin{itemize}
+          \item A ideia do MULTICS era uma super máquina oferecendo poder computacional para todos na região de Boston
+          \item A máquina não tomou conta do mundo, porém muitas ideias surgiram ali
+          \item O GE e a Bell Labs saíram e o MIT continuou
+          \item Foi utilizado pela GE, Ford e Agência Nacional de Segurança dos EUA até o final dos anos 90
+          \item Deu origem aos conceitos de LANs (Redes Locais) e Sistemas Distribuídos
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - UNIX}
+      \begin{itemize}
+          \item PDP-1 da DEC, com 4K de palavras de 18 bits
+          \item Custava \$120.000, menos de 5\% do valor do IBM 7094
+          \item Não era para a parte numérica e deu origem a uma sequência de PDFs incompatíveis
+          \item Ken Thompson trabalhou no MULTICS e, usando um PDP-7, criou uma versão monousuária do mesmo (o futuro UNIX)
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Terceira Geração - POSIX}
+      \begin{itemize}
+          \item Source disponível deu origem a várias versões incompatíveis, gerando um caos
+          \item Duas versões importantes:
+                \begin{itemize}
+                    \item System V (AT\&T)
+                    \item BSD (Berkeley Software Distribution)
+                          \begin{itemize}
+                              \item FreeBSD, OpenBSD e NetBSD
+                          \end{itemize}
+                \end{itemize}
+          \item Para poder escrever programas que rodassem em qualquer UNIX, o IEEE desenvolveu o POSIX
+      \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Terceira Geração - POSIX}
+      \begin{itemize}
+          \item Define uma interface mínima de chamadas de sistemas que os sistemas UNIX devem suportar
+          \item Outros sistemas operacionais que não são baseados em UNIX também adotaram o padrão
+      \end{itemize}
+  \end{frame}
+  
+  
+\section{Quarta geração - era moderna}
+\begin{frame}{Quarta Geração - 1980 - hoje (Era moderna)}
+      \begin{itemize}
+          \item Circuitos LSI (Integração em Larga Escala)
+          \item Chips com milhares de transistores em um centímetro quadrado de silício
+          \item PCs baseados em microprocessadores
+          \item Inspirados nos minicomputadores (PDP-11), porém muito mais baratos
+          \item Qualquer pessoa poderia ter um computador
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - 1980 - hoje}
+      \begin{itemize}
+          \item Intel 8080 (1974): primeiro processador de 8 bits
+          \item Z80: compatível com o 8080, feito pela Zilog
+          \item SO CP/M (Control Program for Microcomputers)
+              \begin{itemize}
+                  \item Criado pela Digital Research
+                  \item Dominou o mercado de PCs por 5 anos
+              \end{itemize}
+          \item Motorola 6800 de 8 bits
+          \item MOS Technology 6502 (usado no Apple II)
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - Microsoft}
+      \begin{itemize}
+          \item As placas do CP/M eram comercializadas por uma pequena empresa chamada Microsoft
+          \item A Microsoft tinha um nicho de mercado: interpretador BASIC para o CP/M
+          \item Geração seguinte: processadores de 16 bits
+          \item Intel 8086 e o Intel 8088
+          \item A IBM projetou o IBM PC com o 8088
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - Microsoft}
+      \begin{itemize}
+          \item Microsoft ofereceu um sistema para a IBM que incluía o BASIC e um SO: o DOS
+          \item DOS = Disk Operating System
+          \item Foi um SO adaptado de outro (comprado) que se tornou o MS-DOS
+          \item Sistemas de linha de comandos:
+                \begin{itemize}
+                    \item CP/M
+                    \item DOS
+                    \item Apple DOS
+                \end{itemize}
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - GUI e Apple}
+      \begin{itemize}
+          \item Dough Engelbart (Stanford Research Institute) criou a GUI (Graphical User Interface)
+          \item A Apple “incorporou” essa ideia ao Macintosh
+                \begin{itemize}
+                    \item Foi lançado em 1984
+                    \item CPU Motorola 6800 de 16 bits
+                    \item 64Kb de ROM para a GUI
+                \end{itemize}
+          \item Apple mudou para o PowerPC de 32 bits
+          \item Em 2001 lançou o Mac OS X (Unix based)
+          \item Em 2005 migrou para processadores Intel
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - Windows}
+      \begin{itemize}
+          \item Originalmente um ambiente gráfico rodando sobre o DOS em 16 bits
+          \item Os descendentes do Windows NT são sistemas gráficos completos de 32 ou 64 bits
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - UNIX e Linux}
+      \begin{itemize}
+          \item Poderoso em estações de trabalho e servidores (especialmente processadores RISC)
+          \item Computadores baseados no Pentium (Celeron, Xeon, AMD, etc) adotaram o Linux como uma alternativa ao Windows
+          \item X Window = sistema de janelas desenvolvido pelo M.I.T.
+          \item Serve de base para uma GUI: KDE, Gnome, etc
+      \end{itemize}
+  \end{frame}
+  \begin{frame}{Quarta Geração - Rede e Distribuídos}
+      \begin{itemize}
+          \item Meados dos anos 80
+          \item Serviços compartilhados
+          \item Servidores remotos
+          \item Middleware (Transparência)
+          \item Reconhecer múltiplos processadores / núcleos
+          \item Deu origem à área de Sistemas Distribuídos
+      \end{itemize}
+  \end{frame}
+  
+
+
+
+
+
+\section{EXEMPLO de Proposta de atividade}
+
+\begin{frame}{Explorando a Evolução dos Sistemas Operacionais}
+
+      Objetivo:
+      \begin{itemize}
+            \item  Investigar e compreender a evolução dos sistemas operacionais ao longo do tempo, desde os sistemas de lote até os modernos sistemas com interfaces gráficas.
+      \end{itemize}
+      
+\end{frame}
+
+\begin{frame}{Referências}\justifying
+      \begin{itemize}
+            \item \textbf{Slides SOPA2 - Prof. Alexandre Beletti Ferreira}
+            \item \textbf{TANENBAUM, Andrew S.; WOODHULL, Albert S.} Sistemas operacionais: projeto e implementação. 3. ed. Porto Alegre: Bookman, 2008. ISBN 9788577800571.
+      \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Imagem do dia}
+
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=0.8\textwidth]{assets/imagem-do-dia/primeiro-dia-aula.jpg}}
+        
+    \end{figure}
+\end{frame}
+
+\backmatter
+\end{document}

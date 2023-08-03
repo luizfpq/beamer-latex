@@ -1,0 +1,103 @@
+\documentclass{beamer}
+\usepackage{amsfonts,amsmath,oldgerm}
+\usepackage{ragged2e}
+\usepackage{supertabular}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+\usepackage{xkeyval}
+
+\usetheme{sintef}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+
+\usefonttheme[onlymath]{serif}
+
+\titlebackground*{assets/background}
+
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+
+\title{Aula 05 - Processos, chamadas de sistema e interrupções}
+\subtitle{2023.1 - SOPA2 - Sistemas Operacionais}
+\course{Tecnologia em Análise e Desenvolvimento de Sistemas}
+\author{\href{mailto:luiz.quirino@ifsp.edu.br}{Luiz \textbf{Quirino}}}
+\IDnumber{luiz.quirino@ifsp.edu.br}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{frame}
+%
+%      Este material é produzido utilizando \LaTeX\, baseado na SINTEF Presentation, disponibilizado sob licenciamento \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0}
+%
+%\vspace{\baselineskip}
+
+%In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation}
+
+% This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
+
+%\end{frame}
+
+
+\section{Por que precisamos de um sistema operacional?}
+\begin{frame}
+      
+
+\begin{itemize}
+  \item Sistemas de computadores modernos são compostos por diversos dispositivos:
+  \item Processadores;
+  \item Memória;
+  \item Controladoras;
+  \item Monitor;
+  \item Teclado;
+  \item Mouse;
+               
+                 \item Impressoras;
+               
+                 \item Etc...
+               
+               \end{itemize}
+                     
+     \end{frame}
+     
+     \begin{frame}
+           
+     \begin{itemize}
+           \item Com tantos dispositivos, surge a necessidade de gerenciamento e manipulação desses diversos dispositivos
+         
+           \item Tarefa difícil
+         
+        
+     
+     
+     
+     \begin{frame}
+           
+     \begin{itemize}
+           \item Software responsável por gerenciar dispositivos que compõem um sistema computacional e realizar a interação entre o usuário e esses dispositivos;
+         
+           \item Hardware
+         
+           \item Processador;
+         
+           \item Memória Principal;
+         
+           \item Dispositivos de Entrada/Saída;
+         
+           \item Software
+         
+           \item Programas de Aplicação;
+         
+           \item Programas do Sistema;
+         
+         \end{itemize}
+     \end{frame}
+
+
+\footlinecolor{}
+
+\backmatter
+\end{document}
