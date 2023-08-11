@@ -146,7 +146,21 @@
         \item 32K de palavras de 27 bits
     \end{itemize}
 \end{frame}
-
+\begin{frame}{Sistema em Camadas}
+    \begin{itemize}
+        \item A camada acima nunca precisa se preocupar com o que está ocorrendo na camada de baixo.
+        \item Camada 0: Alocação do processador, alternando entre processos quando ocorriam interrupção ou temporizadores expiravam.
+        \item Camada 1: Gerenciamento de memória, alocando espaços para processos na memória principal e em um tambor (antigo meio magnético de armazenamento) com 512K.
+        \item Camada 2: Manipulava a Comunicação entre Processos (IPC) e o console do operador.
+    \end{itemize}
+    \begin{frame}{Sistema em Camadas}
+    \begin{itemize}
+       
+        \item Camada 3: Gerenciava dispositivos de E/S e armazenava em buffer os fluxos de informações.
+        \item Camada 4: Os programas de usuário, não se preocupavam com gerenciamento algum (processos, memória, console ou E/S).
+        \item Camada 5: Processo de operador do sistema.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}{Sistema em camadas}
     A idéia por trás deste tipo de SO é fazer a organização por meio de hierarquia de camadas.
@@ -174,19 +188,11 @@
         \end{tabular}
     \end{table}
 
+
 \end{frame}
 
 
-\begin{frame}{Sistema em Camadas}
-    \begin{itemize}
-        \item Camada 0: Alocação do processador, alternando entre processos quando ocorriam interrupção ou temporizadores expiravam.
-        \item Camada 1: Gerenciamento de memória, alocando espaços para processos na memória principal e em um tambor (antigo meio magnético de armazenamento) com 512K.
-        \item Camada 2: Manipulava a Comunicação entre Processos (IPC) e o console do operador.
-        \item Camada 3: Gerenciava dispositivos de E/S e armazenava em buffer os fluxos de informações.
-        \item Camada 4: Os programas de usuário, não se preocupavam com gerenciamento algum (processos, memória, console ou E/S).
-        \item Camada 5: Processo de operador do sistema.
-    \end{itemize}
-\end{frame}
+
 \begin{frame}{Sistema THE -  Camada 0}
     O modelo de sistema em camadas propõe uma decomposição hierárquica do sistema operacional, onde cada camada fornece um conjunto de serviços para a camada imediatamente superior.
 
@@ -730,6 +736,7 @@
         \item \textbf{TANENBAUM, Andrew S.; WOODHULL, Albert S.} Sistemas operacionais: projeto e implementação. 3. ed. Porto Alegre: Bookman, 2008. ISBN 9788577800571.
     \end{itemize}
 \end{frame}
+
 
 \begin{frame}[fragile]{Imagem do dia}
 
