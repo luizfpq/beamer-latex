@@ -1,7 +1,8 @@
 \documentclass{beamer}
 \usepackage{amsfonts,amsmath,oldgerm}
 \usepackage{ragged2e}
-
+\usepackage{amsfonts}
+\usepackage{amsmath}
 \usetheme{sintef}
 
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
@@ -202,32 +203,7 @@
       \end{itemize}
 
 \end{frame}
-\begin{frame}
-      \frametitle{Compatibilidade de Navegadores}
 
-      \begin{itemize}
-            \item \textbf{Muitos Fabricantes e Versões de Navegadores}
-
-            \item \textbf{Javascript (Ecmascript) Evolui Rapidamente}
-
-            \item \textbf{Existem Extensões/Modificações de Scripts}
-                  \begin{itemize}
-                        \item TypeScript, JSX, ...
-                  \end{itemize}
-
-            \item \textbf{Polyfill}
-                  \begin{itemize}
-                        \item Preenche novas funcionalidades (novos objetos, funções, APIs, ...) em versões antigas do ES
-                  \end{itemize}
-
-            \item \textbf{Transpiladores}
-                  \begin{itemize}
-                        \item Compiladores de ES mais recente ou outra linguagem para ES5
-                        \item Pode ser executado dinamicamente ou o projeto deve ser compilado antes do deployment
-                  \end{itemize}
-      \end{itemize}
-
-\end{frame}
 \begin{frame}
       \frametitle{Separe Estado e Apresentação}
 
@@ -351,8 +327,8 @@
             \item \textbf{O Viewmodel é o contexto \$scope}
             \item \textbf{As ligações são bidirecionais}
             \item \textbf{Automaticamente propagadas em ambos os sentidos}
-            \item \textbf{\$scope.caption <-> input.value (como acima)}
-            \item \textbf{\$scope.firstName -> renderizado para o espaço reservado do texto}
+            \item \textbf{\$scope.caption ←→ input.value (como acima)}
+            \item \textbf{\$scope.firstName → renderizado para o espaço reservado do texto}
             \item \textbf{O controlador trabalha apenas com o objeto \$scope}
       \end{itemize}
 
@@ -412,7 +388,7 @@
             \item Sucessor informal do Flux.
             \item Todos os dados estão em um armazenamento (um objeto).
             \item Sem despachante, ações são processadas por redutor(es).
-            \item O redutor é uma função pura (estado, ação) => estado.
+            \item O redutor é uma função pura (estado, ação) → estado.
             \item O estado nunca deve ser modificado.
       \end{itemize}
       \begin{center}
