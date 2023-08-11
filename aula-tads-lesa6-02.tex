@@ -1,0 +1,112 @@
+\documentclass{beamer}
+\usepackage{amsfonts,amsmath,oldgerm}
+\usepackage{ragged2e}
+
+\usetheme{sintef}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+
+\usefonttheme[onlymath]{serif}
+
+\titlebackground*{assets/background}
+
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+
+\title{Aula 02 - Computação em nuvem PT-2}
+\subtitle{2023.1 - LESA 6 -  Laboratório de Escalabilidade de Sistemas}
+\course{Tecnologia em Análise e Desenvolvimento de Sistemas}
+\author{\href{mailto:luiz.quirino@ifsp.edu.br}{Luiz \textbf{Quirino}}}
+\IDnumber{luiz.quirino@ifsp.edu.br}
+
+
+
+\begin{document}
+\maketitle
+\footlinecolor{maincolor}
+\section{Estudo de caso}
+\begin{frame}
+      \frametitle{Estudo de Caso: Expansão da Startup AlphaTech}
+      \textbf{Introdução:}
+      \begin{itemize}
+          \item A AlphaTech é uma startup em crescimento no mercado de educação.
+          \item Percebeu a necessidade de migrar seus serviços para a nuvem.
+          \item Objetivos: otimizar a escalabilidade, segurança e desempenho.
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}
+      \frametitle{Objetivos}
+      \begin{itemize}
+          \item Selecionar um provedor de serviços em nuvem.
+          \item Dimensionar recursos conforme as necessidades atuais e previstas.
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}
+      \frametitle{Dados Fornecidos}
+      \begin{itemize}
+          \item Média de 50.000 visitantes únicos/dia. Picos de até 100.000.
+          \item Banco de dados de 2 TB, crescendo 10 GB/mês.
+          \item Necessidade de resposta rápida para boa experiência do usuário.
+          \item Expansão para novos mercados nos próximos dois anos.
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}
+      \frametitle{Tarefas: Pesquisa e Seleção de Provedor}
+      \begin{itemize}
+          \item Comparação: AWS, Google Cloud e Microsoft Azure.
+          \item Criterios: custo, escalabilidade, localização dos data centers, serviços e suporte ao cliente.
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}
+      \frametitle{Tarefas: Dimensionamento de Recursos}
+      \begin{itemize}
+          \item Definir tipo e tamanho de instância para a aplicação.
+          \item Selecionar solução de banco de dados adequada.
+          \item Estratégia para picos de tráfego (ex.: auto scaling).
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}
+      \frametitle{Tarefas: Custo Estimado e Planos de Crescimento}
+      \begin{itemize}
+          \item Estimar custos mensais e anuais.
+          \item Considerar descontos por compromissos de longo prazo.
+          \item Estratégia para dimensionamento conforme expansão.
+      \end{itemize}
+      \end{frame}
+      
+      \begin{frame}
+      \frametitle{Entrega e Critérios de Avaliação}
+      \textbf{Entrega:}
+      \begin{itemize}
+          \item Relatório de apresentação para a diretoria.
+          \begin{itemize}
+            \item Detalhamento de escolha, dimensionamento e custos.
+            \item Planos para escalabilidade.
+          \end{itemize}
+          
+      \end{itemize}
+      \textbf{Critérios de Avaliação:}
+      \begin{itemize}
+          \item Decisões lógicas e claras.
+          \item Eficiência de custo.
+          \item Provisões para crescimento.
+          \item Backup, segurança e recuperação de desastres.
+      \end{itemize}
+      \end{frame}
+      
+
+\begin{frame}[fragile]{Imagem do dia}
+      \framesubtitle{Computação em nuvem}
+	\begin{figure}[H]
+		\centerline{\includegraphics[width=0.4\textwidth]{assets/imagem-do-dia/arquivos-na-nuvem-estilingue.jpg}}
+
+	\end{figure}
+\end{frame}
+\footlinecolor{}
+
+\backmatter
+\end{document}
