@@ -1,0 +1,345 @@
+\documentclass{beamer}
+\usepackage{amsfonts,amsmath,oldgerm}
+\usepackage{ragged2e}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usetheme{sintef}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+
+\usefonttheme[onlymath]{serif}
+
+\titlebackground*{assets/background}
+
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+
+\title{Aula 03 - Fundamentos de Linguagens Dinâmicas de Programação}
+\subtitle{2023.1 - PDWA5 - Programação Dinâmica para Web}
+\course{Tecnologia em Análise e Desenvolvimento de Sistemas}
+\author{\href{mailto:luiz.quirino@ifsp.edu.br}{Luiz \textbf{Quirino}}}
+\IDnumber{luiz.quirino@ifsp.edu.br}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{frame}
+%
+%      Este material é produzido utilizando \LaTeX\, baseado na SINTEF Presentation, disponibilizado sob licenciamento \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0}
+%
+%\vspace{\baselineskip}
+
+%In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation}
+
+% This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
+%\end{frame}
+\footlinecolor{maincolor}
+\section{introdução}
+\begin{frame}{Linguagens de Programação Dinâmicas: Uma Visão}
+	\textbf{Propósito e Características}
+	\begin{itemize}
+		\item Desenvolvimento e prototipagem rápidos
+		\item Flexibilidade e facilidade de uso
+		\item Diferença-chave: tipagem dinâmica, interpretadas, sintaxe simplificada
+	\end{itemize}
+\end{frame}
+
+
+
+
+\section{Expansão de conceitos}
+
+
+
+
+\begin{frame}{Meta Object Protocol (MOP)}
+	\textbf{Expansão dos Poderes da Linguagem}\\
+	MOP fornece suporte a:
+	\begin{itemize}
+		\item Introspecção
+		\item Interseção
+	\end{itemize}
+	Através de meta-objetos ou meta-classes associadas a cada entidade.
+\end{frame}
+
+\begin{frame}{Aspecto de Introspecção}
+	\textbf{Introspecção (ou Reflexão)}:
+	\begin{itemize}
+		\item Capacidade de uma linguagem para autoexaminar seus objetos ou classes.
+		\item Permite identificar atributos e métodos em uma classe.
+		\item Elemento-chave em linguagens de programação orientadas a objetos dinâmicas.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Aspecto de Interseção}
+	\textbf{Interseção}:
+	\begin{itemize}
+		\item Habilidade de modificar o comportamento de objetos durante a execução.
+		\item Viabiliza binding dinâmico de métodos a objetos ou classes.
+		\item Poderoso, mas deve ser usado com discernimento.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Implementação Parcial vs. Completa do MOP}
+	\begin{itemize}
+		\item Java implementa MOP parcialmente, focando em introspecção para apoiar a API Reflection.
+		\item Linguagens como Python, Scala, Ruby, Smalltalk e Groovy implementam MOP por completo.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Benefícios do MOP}
+	\textbf{Avançando Além das Linguagens Tradicionais}:
+	\begin{itemize}
+		\item Agrega funcionalidades adicionais e flexíveis.
+		\item Exemplo: Programação Orientada a Aspecto (AOP) é viável graças ao MOP.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Tipagem Dinâmica}
+	\textbf{Definição:}
+	\begin{itemize}
+		\item Preserva o desenvolvedor de especificar o tipo de dados de uma variável, atributo ou retorno de método.
+	\end{itemize}
+
+	\textbf{Considerações:}
+	\begin{itemize}
+		\item A resolução dos tipos de dados ocorre em tempo de execução.
+		\item Pode levar a erros de parse, dependendo da situação.
+	\end{itemize}
+	\textbf{Exemplo em JavaScript:}
+	\begin{verbatim}
+    var local = "Variável Local";
+    let estatico = "Variável com escopo de bloco";
+      \end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]{Closures}
+	\textbf{Definição:}
+	\begin{itemize}
+		\item Dados que referenciam uma função e podem acessar variáveis locais e não locais que estejam no escopo externo a sua invocação.
+	\end{itemize}
+
+	\textbf{Exemplo em JavaScript:}
+	\begin{verbatim}
+    var funcaoClosure = function (msg) {
+      alert(msg);
+    };
+    function executaClosure(closure) {
+      closure("Mensagem parâmetro de um closure");
+    }
+    executaClosure(funcaoClosure);
+      \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Sobrecarga de Operador (Operator Overloading)}\justifying
+	\textbf{Definição:}
+	\begin{itemize}
+		\item Caso específico de polimorfismo onde o desenvolvedor pode modificar o comportamento padrão de um determinado operador da linguagem.
+	\end{itemize}
+	\textbf{Obs:}
+	A sobrecarga de operadores não é uma característica intrínseca do JavaScript como é em algumas outras linguagens. No entanto, com a introdução de classes em ES6, é possível criar um comportamento semelhante à sobrecarga de operadores usando métodos simbólicos.
+
+
+\end{frame}
+\begin{frame}[fragile]{Sobrecarga de Operador (Operator Overloading)}
+
+	\textbf{Exemplo em JavaScript (usando métodos simbólicos):}
+	\begin{verbatim}
+    class CustomNumber {
+        constructor(value) {
+            this.value = value;
+        }
+    
+        [Symbol.toPrimitive](hint) {
+            if (hint == 'number') {
+                return this.value;
+            }
+            return null;
+        }
+    }
+    
+    let a = new CustomNumber(5);
+    let b = new CustomNumber(7);
+    
+    console.log(a + b);  % imprime: 12
+      \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Sintaxe Nativa para Array e Map}
+	\textbf{Definição:}
+	\begin{itemize}
+		\item Linguagens de Programação Dinâmicas (LPDs) muitas vezes incluem uma sintaxe nativa para arrays e mapas.
+		\item Simplifica e acelera o desenvolvimento, tornando-o mais intuitivo.
+	\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Sintaxe Nativa para Array e Map}
+
+	\textbf{Exemplo em JavaScript:}
+	\begin{verbatim}
+    // Array:
+    let array = [1, 2, 3];
+    // Mapa (objeto):
+    let mapa = {
+        um: 1,
+        dois: 2,
+        tres: 3
+    };
+    console.log(array); % imprime: [1, 2, 3]
+    console.log(mapa);  % imprime: {um: 1, dois: 2, tres: 3}
+      \end{verbatim}
+\end{frame}
+\begin{frame}{Métodos helpers para coleções}\justifying
+	\begin{itemize}
+		\item Auxiliam nas operações comuns em coleções.
+		\item Alguns dos métodos mais comuns:
+		      \begin{itemize}
+			      \item \texttt{each}: Iteração com um closure.
+			      \item \texttt{find}: Encontra a primeira ocorrência por critério.
+			      \item \texttt{findAll}: Encontra todas as ocorrências por critério.
+			      \item \texttt{collect}: Aplica um closure a cada elemento e cria nova coleção.
+			      \item \texttt{join}: Concatena valores com uma string.
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Exemplo do Método 'each'}
+	\begin{verbatim}
+            const numbers = [1, 2, 3, 4, 5];
+            numbers.forEach((number) => {
+              console.log(number);
+            });
+            \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo do Método 'find'}
+	\begin{verbatim}
+            const fruits = ['apple', 'banana', 'grape', 'orange'];
+            const foundFruit = fruits.find(
+                  (fruit) => fruit === 'banana');
+            console.log(foundFruit);  // Saída: banana
+            \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo do Método 'findAll'}
+	\begin{verbatim}
+            const numbers = [1, 2, 3, 4, 5, 2];
+            const foundNumbers = numbers.filter(
+                  (number) => number === 2);
+            console.log(foundNumbers);  // Saída: [2, 2]
+            \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo do Método 'collect'}\justifying
+	\begin{verbatim}
+            const numbers = [1, 2, 3, 4, 5];
+            const squaredNumbers = numbers.map(
+                  (number) => number * number);
+            console.log(squaredNumbers);  // Saída: [1, 4, 9, 16, 25]
+            \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo do Método 'join'}\justifying
+	\begin{verbatim}
+            const words = ['Hello', 'world', '!'];
+            const sentence = words.join(' ');
+            console.log(sentence);  // Saída: Hello world !
+            \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Operador de Navegação Segura}\justifying
+	Muitas LPDs disponibilizam um operador para evitar erro de nullable object.
+	Operador de navegação segura (também chamado de Operador de coalescência nula
+	) em javascript:
+	\begin{verbatim}
+            const foo = null ?? 'default string';
+            console.log(foo);
+            // Saída: "default string"
+            
+      \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Expressão dentro de String em JavaScript}\justifying
+	Para facilitar a exibição ou concatenação de informações em uma string, muitas LPDs permitem embutir expressões dentro de uma string. Isso ajuda a melhorar a legibilidade e a facilidade de construção de strings complexas.
+	\textbf{Exemplo em JavaScript}:
+	\begin{verbatim}
+            const email = 'email@email.com.br';
+            console.log(`EMAIL: ${email}`);
+            \end{verbatim}
+\end{frame}
+\begin{frame}[fragile]{Avaliação de Expressões em Tempo de Execução em JavaScript}\justifying
+	Toda LPD apresenta um recurso para resolver expressões em tempo de execução. Esse recurso é o mais importante, pois dá sentido à dinâmica da linguagem de programação, aumentando sua flexibilidade. Geralmente, esse recurso é chamado de `eval` em diversas linguagens dinâmicas.
+	\textbf{Exemplo em JavaScript}:
+	\begin{verbatim}
+                  console.log(eval('2 * 4 + 2'));
+                  // retorna 10
+                  \end{verbatim}
+	Neste exemplo, a função `eval` é usada para avaliar a expressão `'2 * 4 + 2'` em tempo de execução, retornando o resultado 10.
+\end{frame}
+
+
+\section{Vantagens e desvantagens}
+\begin{frame}{Vantagens das LPDs}\justifying
+	A maioria das vantagens desse tipo de linguagem é a simplicidade de codificação e as funcionalidades alternativas aos recursos já oferecidos nas linguagens de programação (orientada a objeto) tradicionais. Dentre essas vantagens podemos destacar:
+
+	\begin{itemize}
+		\item Clareza na sintaxe da linguagem: Recursos como tipagem dinâmica simplificam a sintaxe.
+		\item Facilidade em trabalhar com coleções: Métodos helper e closure tornam operações sobre coleções amigáveis.
+		\item Flexibilidade em poder executar expressões em tempo de execução: Recurso importante para dinamismo.
+
+	\end{itemize}
+\end{frame}
+\begin{frame}{Vantagens das LPDs}\justifying
+
+
+	\begin{itemize}
+		\item Expansão das funcionalidades da linguagem: Sobrecarga de operadores muda comportamentos de classes.
+		\item Invocação dinâmica de métodos com closure: Permite chamadas mapeadas para closures.
+		\item Novos conceitos e paradigmas: Recursos das LPDs viabilizam programação por convenção, programação orientada a aspecto, etc.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Desvantagens das LPDs}\justifying
+	Sem dúvida, as desvantagens das LPDs são poucas, uma vez que elas possuem as funcionalidades tradicionais de toda linguagem de programação, além de possuir as características específicas de uma linguagem de programação dinâmica. Confesso que foi difícil achar desvantagens relacionadas à sua estrutura como linguagem de programação; foi mais fácil achar desvantagens fora desse escopo.
+
+\end{frame}
+
+\begin{frame}{Desvantagens das LPDs}\justifying
+
+	\begin{itemize}
+		\item Mudança de Sintaxe: Muitos recursos das LPDs apresentam um novo padrão de sintaxe, que pode ser uma dificuldade para os novos usuários, mas que com o tempo pode ser superada.
+		\item Novos Paradigmas: Com a popularidade desse tipo de linguagem de programação, novos conceitos e paradigmas foram surgindo, o que pode dificultar a adaptação para aqueles mais acostumados às linguagens tradicionais.
+		\item Maior Custo de Processamento: Recursos dinâmicos como tipagem dinâmica, parse em tempo de execução e closure podem aumentar o custo de processamento em comparação com linguagens tradicionais. No entanto, esse aumento tende a se equiparar devido aos benefícios trazidos pelos recursos e à evolução dos hardwares.
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Utilização das LPDs}
+	\textbf{Quando usar:}
+	\begin{itemize}
+		\item Desenvolvimento web e back-end
+		\item Automação e tarefas repetitivas
+		\item Flexibilidade é prioridade
+	\end{itemize}
+	\textbf{Quando não usar:}
+	\begin{itemize}
+		\item Performance é crucial
+		\item Sistemas de tempo real
+	\end{itemize}
+\end{frame}
+
+\footlinecolor{}
+\begin{frame}[fragile]{Imagem do dia}
+
+	\begin{figure}[H]
+		\centerline{\includegraphics[width=0.8\textwidth]{assets/imagem-do-dia/neo-lpd.jpg}}
+
+	\end{figure}
+\end{frame}
+\backmatter
+\end{document}
